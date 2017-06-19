@@ -67,10 +67,10 @@ void GeotiffWriter::setMapFileName(const std::string& mapFileName)
   map_file_name_ = mapFileName;
 
   if (use_utc_time_suffix_){
-    //QDateTime now (QDateTime::currentDateTimeUtc());
-    //std::string current_time_string = now.toString(Qt::ISODate).toStdString();
-    QTime now (QTime::currentTime());
+    QDateTime now (QDateTime::currentDateTimeUtc());
     std::string current_time_string = now.toString(Qt::ISODate).toStdString();
+    //QTime now (QTime::currentTime());
+    //sstd::string current_time_string = now.toString(Qt::ISODate).toStdString();
 
     map_file_name_ += "_" + current_time_string;
   }
